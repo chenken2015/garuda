@@ -16,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.fpx.product.controller.base.BaseController;
 
-
 @Controller
 @RequestMapping("/${entityName}")
 public class ${entityName}Controller extends BaseController{

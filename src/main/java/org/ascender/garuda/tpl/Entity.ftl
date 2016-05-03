@@ -1,4 +1,4 @@
-package ${module}.domain;
+package com.fpx.product.entity;
 
 <#list columns as column>
 <#if column.javaType == "Date">
@@ -6,18 +6,21 @@ import java.util.Date;
 <#break>
 </#if>
 </#list>
-import com.sf.framework.base.domain.BaseEntity;
-
+import java.io.Serializable;
 /**
- * ${comment}
- * @author ${username}
- *
- */
-@SuppressWarnings("serial")
-public class ${entityName} extends BaseEntity {
+ * @Title: 
+ * @Description:对应表:
+ * @Company:4px
+ * @author chenken
+ * @date 
+ * @since v1.0.0
+ */
+public class ${entityName} implements Serializable {
 
 <#list columns as column>
-	//${column.comment}
+	/**
+	 *	${column.comment}
+	*/
 	private ${column.javaType} ${column.fieldName};
 </#list>
 

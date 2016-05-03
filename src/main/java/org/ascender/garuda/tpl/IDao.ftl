@@ -1,20 +1,33 @@
-package ${module}.dao;
+package com.fpx.product.dao;
 
-import java.util.Collection;
-import com.sf.framework.base.IPage;
-import com.sf.framework.server.base.dao.IEntityDao;
-import com.sf.module.frameworkimpl.domain.QueryObj;
-import ${module}.domain.${entityName};
+import java.util.List;
 
-/**
- * ${entityName} DAO接口定义
- * @author ${username}
- *
- */
-public interface I${entityName}Dao extends IEntityDao<${entityName}> {
+import com.fpx.product.entity.${entityName};
 
-	public Collection<${entityName}> findBy(QueryObj queryObj);
-
-	public IPage<${entityName}> findPageBy(QueryObj queryObj);
-
+public interface I${entityName}Dao {
+	
+	public List<${entityName}> findBy(${entityName} pc);
+	/**
+	 * 根据id查询对象
+	 * @param ${entityName?uncap_first}
+	 * @return	
+	 */
+	public ${entityName} findById(Long id);
+	/**
+	 * 保存对象
+	 * @param ${entityName?uncap_first}
+	 * @return	
+	 */
+	public Long save${entityName}(${entityName} ${entityName?uncap_first});
+	/**
+	 * 根据id删除对象
+	 * @param id
+	 * @return	
+	 */
+	public void deleteById(Long id);
+	/**
+	 * 更新数据库对象信息
+	 * @param ${entityName?uncap_first}
+	 */
+	public void update${entityName}(${entityName} ${entityName?uncap_first});
 }

@@ -293,16 +293,16 @@ public class CodeUtil {
 		String basePath = path + "/" + table.getProject() + "/" +table.getModule().replace(".", "/");
 		//entity
 		genereateCode("Entity.ftl",table,basePath+"/domain/"+table.getEntityName()+".java");
+		//Controller
+		genereateCode("controller.ftl",table,basePath+"/action/"+table.getEntityName()+"Action.java");
+		//IXxxService
+		genereateCode("service.ftl",table,basePath+"/service/I"+table.getEntityName()+"Service.java");
+		//IXxxServiceImpl
+		genereateCode("serviceImpl.ftl",table,basePath+"/service/impl/"+table.getEntityName()+"ServiceImpl.java");
 		//IXxxDao
 		genereateCode("IDao.ftl",table,basePath+"/dao/I"+table.getEntityName()+"Dao.java");
-		//XxxDao
-		genereateCode("Dao.ftl",table,basePath+"/dao/"+table.getEntityName()+"Dao.java");
-		//IXxxBiz
-		genereateCode("IBiz.ftl",table,basePath+"/biz/I"+table.getEntityName()+"Biz.java");
-		//XxxBiz
-		genereateCode("Biz.ftl",table,basePath+"/biz/"+table.getEntityName()+"Biz.java");
-		//XxxBiz
-		genereateCode("Action.ftl",table,basePath+"/action/"+table.getEntityName()+"Action.java");
+		//mapper
+		genereateCode("mapper.xml.ftl",table,basePath+"/dao/"+table.getEntityName()+"Mapper.xml");
 		
 		//实体名首字母小写
 		String lEnitityName  = table.getEntityName().substring(0, 1).toLowerCase()+table.getEntityName().substring(1);

@@ -292,9 +292,9 @@ public class CodeUtil {
 			path = path.substring(0, path.length() - 1);
 		String basePath = path + "/" + table.getProject() + "/" +table.getModule().replace(".", "/");
 		//entity
-		genereateCode("Entity.ftl",table,basePath+"/domain/"+table.getEntityName()+".java");
+		genereateCode("Entity.ftl",table,basePath+"/entity/"+table.getEntityName()+".java");
 		//Controller
-		genereateCode("controller.ftl",table,basePath+"/action/"+table.getEntityName()+"Action.java");
+		genereateCode("controller.ftl",table,basePath+"/controller/"+table.getEntityName()+"Controller.java");
 		//IXxxService
 		genereateCode("service.ftl",table,basePath+"/service/I"+table.getEntityName()+"Service.java");
 		//IXxxServiceImpl
@@ -306,10 +306,9 @@ public class CodeUtil {
 		
 		//实体名首字母小写
 		String lEnitityName  = table.getEntityName().substring(0, 1).toLowerCase()+table.getEntityName().substring(1);
-		//excel模板
+		/*excel模板
 		String excel = lEnitityName + ".xlsx";
 		generateDefaultExcelTemplate(table, basePath+"/excel/"+excel);
-		
 		//暂时使用freemarker,应该使用dom4j操作xml实现配置文件生成
 		genereateCode("mapping.xml.ftl",table,basePath+"/META-INF/config/"+lEnitityName+"_mapping.xml");
 		genereateCode("beans.xml.ftl",table,basePath+"/META-INF/config/"+lEnitityName+"_beans.xml");
@@ -318,7 +317,7 @@ public class CodeUtil {
 		generateI18nConfig(table, basePath+"/META-INF/i18n/"+lEnitityName+"_messages_en_US.properties");
 		generateI18nConfig(table, basePath+"/META-INF/i18n/"+lEnitityName+"_messages_zh_CN.properties");
 		generateI18nConfig(table, basePath+"/META-INF/i18n/"+lEnitityName+"_messages_zh_TW.properties");
-		
+		*/
 		//easyui版page,js
 		genereateCode("jsp.ftl",table,basePath+"/META-INF/pages/"+table.getSimpleModule()+"/easyui_"+lEnitityName+".jsp");
 		genereateCode("js.ftl",table,basePath+"/META-INF/pages/"+table.getSimpleModule()+"/js/"+lEnitityName+".js");

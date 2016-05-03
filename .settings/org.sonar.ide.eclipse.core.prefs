@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+extraProperties=sonar.host.url\=http\://172.16.24.9\:9000\r\nsonar.jdbc.password\=sonar\r\nsonar.jdbc.username\=sonar\r\nsonar.jdbc.url\=jdbc\:mysql\://172.16.24.9\:3306/sonar?useUnicode\=true&characterEncoding\=utf8
+projectKey=org.ascender\:garuda
+serverUrl=http\://localhost\:9000
+version=2

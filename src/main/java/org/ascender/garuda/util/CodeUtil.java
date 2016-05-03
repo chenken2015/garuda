@@ -303,10 +303,10 @@ public class CodeUtil {
 		genereateCode("IDao.ftl",table,basePath+"/dao/I"+table.getEntityName()+"Dao.java");
 		//mapper
 		genereateCode("mapper.xml.ftl",table,basePath+"/dao/"+table.getEntityName()+"Mapper.xml");
-		
+		/*
 		//实体名首字母小写
 		String lEnitityName  = table.getEntityName().substring(0, 1).toLowerCase()+table.getEntityName().substring(1);
-		/*excel模板
+		//excel模板
 		String excel = lEnitityName + ".xlsx";
 		generateDefaultExcelTemplate(table, basePath+"/excel/"+excel);
 		//暂时使用freemarker,应该使用dom4j操作xml实现配置文件生成
@@ -317,11 +317,10 @@ public class CodeUtil {
 		generateI18nConfig(table, basePath+"/META-INF/i18n/"+lEnitityName+"_messages_en_US.properties");
 		generateI18nConfig(table, basePath+"/META-INF/i18n/"+lEnitityName+"_messages_zh_CN.properties");
 		generateI18nConfig(table, basePath+"/META-INF/i18n/"+lEnitityName+"_messages_zh_TW.properties");
-		*/
 		//easyui版page,js
 		genereateCode("jsp.ftl",table,basePath+"/META-INF/pages/"+table.getSimpleModule()+"/easyui_"+lEnitityName+".jsp");
 		genereateCode("js.ftl",table,basePath+"/META-INF/pages/"+table.getSimpleModule()+"/js/"+lEnitityName+".js");
-		
+		*/
 	}
 	
 }

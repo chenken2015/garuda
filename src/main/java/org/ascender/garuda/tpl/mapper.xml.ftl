@@ -8,10 +8,11 @@
         <result property="${column.fieldName}" column="${column.columnName}"/>
 	</#list>
     </resultMap>
+    
 	<sql id="columns">
         <![CDATA[
         <#list columns as column>
-        	${column.columnName},
+        	${column.columnName}<#if column_has_next>,</#if>
 		</#list>
         ]]>
     </sql>
@@ -71,7 +72,7 @@
             <set>
             	<#list columns as column>
                 <if test="${column.fieldName} != null">
-                	<![CDATA[ ${column.columnName} = \#\{${column.fieldName}\} ]]>,
+                	<![CDATA[ ${column.columnName} = \#\{${column.fieldName}\} ]]><#if column_has_next>,</#if>
                 </if>
                 </#list>
             </set>

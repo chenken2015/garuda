@@ -90,7 +90,8 @@ public class DBUtil {
 		List<Column> result = new ArrayList<Column>();
 		try {
 			DatabaseMetaData dmd = conn.getMetaData();
-			ResultSet rs = dmd.getColumns(null, username.toUpperCase(), tableName.toUpperCase(), "%");
+			//ResultSet rs = dmd.getColumns(null, username.toUpperCase(), tableName.toUpperCase(), "%");
+			ResultSet rs = dmd.getColumns(null, username.toUpperCase(), tableName, "%");
 			while(rs.next()){
 				Column c = new Column();
 				c.setColumnName(rs.getString(4));
@@ -140,7 +141,8 @@ public class DBUtil {
 		String primary = null;
 		try {
 			DatabaseMetaData dmd = conn.getMetaData();
-			ResultSet rs = dmd.getPrimaryKeys(null, username.toUpperCase(), tableName.toUpperCase());
+			//ResultSet rs = dmd.getPrimaryKeys(null, username.toUpperCase(), tableName.toUpperCase());
+			ResultSet rs = dmd.getPrimaryKeys(null, username.toUpperCase(), tableName);
 			while(rs.next()){
 				primary = rs.getString(4);
 			}

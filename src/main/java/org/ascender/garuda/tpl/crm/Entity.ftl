@@ -1,4 +1,4 @@
-package com.fpx.product.entity;
+package com.fpx.crm.model;
 
 <#list columns as column>
 <#if column.javaType == "Date">

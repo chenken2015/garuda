@@ -292,17 +292,17 @@ public class CodeUtil {
 			path = path.substring(0, path.length() - 1);
 		String basePath = path + "/" + table.getProject() + "/" +table.getModule().replace(".", "/");
 		//entity
-		genereateCode("Entity.ftl",table,basePath+"/entity/"+table.getEntityName()+".java");
+		genereateCode("/crm/Entity.ftl",table,basePath+"/model/"+table.getEntityName()+".java");
 		//Controller
-		genereateCode("controller.ftl",table,basePath+"/controller/"+table.getEntityName()+"Controller.java");
+		genereateCode("/crm/controller.ftl",table,basePath+"/controller/"+table.getEntityName()+"Controller.java");
 		//IXxxService
-		genereateCode("service.ftl",table,basePath+"/service/I"+table.getEntityName()+"Service.java");
+		genereateCode("/crm/service.ftl",table,basePath+"/service/"+table.getEntityName()+"Service.java");
 		//IXxxServiceImpl
-		genereateCode("serviceImpl.ftl",table,basePath+"/service/impl/"+table.getEntityName()+"ServiceImpl.java");
+		genereateCode("/crm/serviceImpl.ftl",table,basePath+"/service/impl/"+table.getEntityName()+"ServiceImpl.java");
 		//IXxxDao
-		genereateCode("IDao.ftl",table,basePath+"/dao/I"+table.getEntityName()+"Dao.java");
+		genereateCode("/crm/Mapper.ftl",table,basePath+"/mapper/"+table.getEntityName()+"Mapper.java");
 		//mapper
-		genereateCode("mapper.xml.ftl",table,basePath+"/dao/"+table.getEntityName()+"Mapper.xml");
+		genereateCode("/crm/mapper.xml.ftl",table,basePath+"/mapper/"+table.getEntityName()+"Mapper.xml");
 		/*
 		//实体名首字母小写
 		String lEnitityName  = table.getEntityName().substring(0, 1).toLowerCase()+table.getEntityName().substring(1);

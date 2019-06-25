@@ -291,19 +291,73 @@ public class CodeUtil {
 		if(path.endsWith("/"))
 			path = path.substring(0, path.length() - 1);
 		String basePath = path + "/" + table.getProject() + "/" +table.getModule().replace(".", "/");
+		//disifang
 		//entity
-		genereateCode("/crm/Entity.ftl",table,basePath+"/model/"+table.getEntityName()+".java");
+		//genereateCode("/crm/Entity.ftl",table,basePath+"/model/"+table.getEntityName()+".java");
 		//Controller
-		genereateCode("/crm/controller.ftl",table,basePath+"/controller/"+table.getEntityName()+"Controller.java");
+		//genereateCode("/crm/controller.ftl",table,basePath+"/controller/"+table.getEntityName()+"Controller.java");
 		//IXxxService
-		genereateCode("/crm/service.ftl",table,basePath+"/service/"+table.getEntityName()+"Service.java");
+		//genereateCode("/crm/service.ftl",table,basePath+"/service/"+table.getEntityName()+"Service.java");
 		//IXxxServiceImpl
-		genereateCode("/crm/serviceImpl.ftl",table,basePath+"/service/impl/"+table.getEntityName()+"ServiceImpl.java");
+		//genereateCode("/crm/serviceImpl.ftl",table,basePath+"/service/impl/"+table.getEntityName()+"ServiceImpl.java");
 		//IXxxDao
-		genereateCode("/crm/Mapper.ftl",table,basePath+"/mapper/"+table.getEntityName()+"Mapper.java");
+		//genereateCode("/crm/Mapper.ftl",table,basePath+"/mapper/"+table.getEntityName()+"Mapper.java");
 		//mapper
-		genereateCode("/crm/mapper.xml.ftl",table,basePath+"/mapper/"+table.getEntityName()+"Mapper.xml");
+		//genereateCode("/crm/mapper.xml.ftl",table,basePath+"/mapper/"+table.getEntityName()+"Mapper.xml");
+		
+		
+		//--------------------------------------------premium---------------------------------------------------
+		//vo
+		genereateCode("/premium/vo.ftl",table,basePath+"/vo/"+"Vo"+table.getEntityName()+".java");
+		//VoSearchCriteria
+		genereateCode("/premium/searchCriteria.ftl",table,basePath+"/vo/"+table.getEntityName()+"SearchCriteria.java");
+		//accessor
+		genereateCode("/premium/accessor.ftl",table,basePath+"/accessor/"+table.getEntityName()+"ServiceAccessor.java");
+		//bo
+		genereateCode("/premium/bo.ftl",table,basePath+"/bo/"+table.getEntityName()+"Bo.java");
+		//service
+		genereateCode("/premium/service.ftl",table,basePath+"/"+table.getEntityName()+"Service.java");
+		//serviceLocal
+		genereateCode("/premium/serviceLocal.ftl",table,basePath+"/"+table.getEntityName()+"ServiceLocal.java");
+		//serviceRemote
+		genereateCode("/premium/serviceRemote.ftl",table,basePath+"/"+table.getEntityName()+"ServiceRemote.java");
+		//serviceBean
+		genereateCode("/premium/serviceBean.ftl",table,basePath+"/"+table.getEntityName()+"ServiceBean.java");
+		//dao
+		genereateCode("/premium/dao.ftl",table,basePath+"/dao/"+table.getEntityName()+"Dao.java");
+		//daoFactory
+		genereateCode("/premium/daoFactory.ftl",table,basePath+"/dao/"+table.getEntityName()+"DaoFactory.java");
+		//daoImpl
+		genereateCode("/premium/daoImpl.ftl",table,basePath+"/dao/"+table.getEntityName()+"DaoImpl.java");
+		//controller
+		genereateCode("/premium/controller.ftl",table,basePath+"/controller/"+table.getEntityName()+"Controller.java");
+		//delegate
+		genereateCode("/premium/delegate.ftl",table,basePath+"/delegate/"+table.getEntityName()+"Delegate.java");
+		//formbean
+		genereateCode("/premium/formbean.ftl",table,basePath+"/formbean/"+table.getEntityName()+"Form.java");
+		//waf-mvc-config.xml
+		genereateCode("/premium/xml/waf-mvc-config.ftl",table,basePath+"/xml/"+table.getEntityName()+"-waf-mvc-config.xml");
+		//waf-mvc-tiles.xml
+		genereateCode("/premium/xml/waf-mvc-tiles.ftl",table,basePath+"/xml/"+table.getEntityName()+"-waf-mvc-tiles.xml");
+		//jsps
+		String lEnitityName  = table.getEntityName().substring(0, 1).toLowerCase()+table.getEntityName().substring(1);
+		genereateCode("/premium/jsp/create.ftl",table,basePath+"/jsp/"+lEnitityName+"Create.jsp");
+		genereateCode("/premium/jsp/createContinue.ftl",table,basePath+"/jsp/"+lEnitityName+"CreateContinue.jsp");
+		genereateCode("/premium/jsp/createVerify.ftl",table,basePath+"/jsp/"+lEnitityName+"CreateVerify.jsp");
+		genereateCode("/premium/jsp/delete.ftl",table,basePath+"/jsp/"+lEnitityName+"Delete.jsp");
+		genereateCode("/premium/jsp/deleteContinue.ftl",table,basePath+"/jsp/"+lEnitityName+"DeleteContinue.jsp");
+		genereateCode("/premium/jsp/deleteVerify.ftl",table,basePath+"/jsp/"+lEnitityName+"DeleteVerify.jsp");
+		genereateCode("/premium/jsp/list.ftl",table,basePath+"/jsp/"+lEnitityName+"List.jsp");
+		genereateCode("/premium/jsp/search.ftl",table,basePath+"/jsp/"+lEnitityName+"Search.jsp");
+		genereateCode("/premium/jsp/update.ftl",table,basePath+"/jsp/"+lEnitityName+"Update.jsp");
+		genereateCode("/premium/jsp/updateContinue.ftl",table,basePath+"/jsp/"+lEnitityName+"UpdateContinue.jsp");
+		genereateCode("/premium/jsp/updateVerify.ftl",table,basePath+"/jsp/"+lEnitityName+"UpdateVerify.jsp");
+		genereateCode("/premium/jsp/updateVerifyViewInfo.ftl",table,basePath+"/jsp/"+lEnitityName+"UpdateVerifyViewInfo.jsp");
+		genereateCode("/premium/jsp/viewInfo.ftl",table,basePath+"/jsp/"+lEnitityName+"ViewInfo.jsp");
+		//--------------------------------------------premium---------------------------------------------------
+		
 		/*
+		 * SF-AIR
 		//实体名首字母小写
 		String lEnitityName  = table.getEntityName().substring(0, 1).toLowerCase()+table.getEntityName().substring(1);
 		//excel模板
